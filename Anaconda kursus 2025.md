@@ -20,6 +20,8 @@
 - Data fra kvalitativ data
 
 ### "Afbrydelser" til case
+- Fil input og output
+- Kontrolstrukturer: loops, if-then-else
 
 ## Sikkerhedsaspekter
 - Governancemodel
