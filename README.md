@@ -1,2 +1,2 @@
-# Anaconda kursus 2025 
-Dette repositorie indeholder information omkring NFA's Anacondakursus.
+# Pythonkursus på NFA
+Dette repositorie indeholder information omkring NFA's pythonkursus.
