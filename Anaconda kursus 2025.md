@@ -21,7 +21,7 @@
 
 ### "Afbrydelser" til case
 - Fil input og output
-- Kontrolstrukturer: loops, if-then-else
+- Kontrolstrukturer: loops, if-else
 
 ## Sikkerhedsaspekter
 - Governancemodel
