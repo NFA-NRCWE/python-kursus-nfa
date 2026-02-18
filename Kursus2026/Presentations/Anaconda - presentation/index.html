@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Anaconda - A Python-platform for datascience</title>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+     /** 
+     body {
+      background-color: ivory!important; 
+      font-family: 'Open Sans';
+     }
+
+     h1, h2, h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: 400;
+      margin-bottom: 0;
+     }
+
+     a{
+       color: black;
+       text-decoration: solid underline #0c8296 3px;
+     }
+
+     a:hover{
+      text-decoration: solid underline orange 5px;
+     }
+     
+     :focus{
+      outline: 5px solid green;
+      border-radius: 5px;
+     }
+
+     .remark-code, .remark-inline-code { font-family: 'Open Sans'; }
+
+     .front {
+      background:ivory;
+      color: #000;
+     }
+     .front h1, .inverse h2 {
+      color: #000;
+      line-height: 0.5em;
+     } 
+     */
+     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+     @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+     .remark-slide-container {
+
+      background-color: dimgrey;
+
+     }
+
+     .remark-slide-content { 
+      	/* Created with https://www.css-gradient.com */
+	background: #030B07;
+	background: -webkit-linear-gradient(top left, #030B07, #034233);
+	background: -moz-linear-gradient(top left, #030B07, #034233);
+	background: linear-gradient(to bottom right, #030B07, #034233);
+  /*border-radius: 1 0px;box-shadow: 0 10px 20px 0 rgba(0,0,0.2),0 5px 20px 0 darkgreen;*/
+  border-radius: 10px;
+	border: 5px solid dimgray;
+    }
+
+     body {
+	font-family: 'Anonymous Pro' !important;
+	background-color: grey;
+	color: chartreuse;
+	font-size: 1em;
+     }
+
+     h1, h2, h3 {
+      font-family: 'Anonymous Pro';
+      margin-bottom: 0;
+      /*color: lawngreen;*/
+     }
+
+     h1 { font-size: 30px!important;}
+     h2 { font-size: 27px!important;}
+     h3 { font-size: 24px!important;}
+
+     li {
+	     line-height: 1.5;
+     } 
+
+     a {
+	    font-family: 'Anonymous Pro';
+      color: yellowgreen;
+      /* text-decoration: solid underline limegreen 3px; */
+     }
+
+     a:hover {
+	    outline: 3px solid gold;
+	    border-radius: 3px;
+	    padding: 2px;
+     	text-decoration: solid underline gold 3px;
+     }
+     
+     :focus {
+     	outline: 3px solid springgreen;
+     	border-radius: 3px;
+	    padding: 2px;
+     }
+
+     .ogcard {
+	font-family: 'Anonymous Pro';
+	border-radius: 30px;box-shadow: 0 10px 20px 0 rgba(0,0,0.2),0 5px 20px 0 darkgreen;
+	border: 4px solid lime;
+	/* Created with https://www.css-gradient.com */
+	background: #030B07;
+	background: -webkit-linear-gradient(top left, #030B07, #034233);
+	background: -moz-linear-gradient(top left, #030B07, #034233);
+	background: linear-gradient(to bottom right, #030B07, #034233);
+	padding: 1em;
+	margin: 0.5em;
+	flex-grow: 1;
+     }
+
+     .ogcard > img {
+		border-radius: 100px;
+		border: 5px dashed yellowgreen;
+		padding: 10px;
+	}
+
+     .ogcontain {
+		display: flex;
+     }
+
+     hr.rounded {
+	     border: 3px dashed yellowgreen;
+     }
+
+     hr.rounded-orange {
+	     border: 3px dashed goldenrod;
+     }
+
+     hr.slim-orange {
+	     border: 2px dashed goldenrod;
+     }
+
+     ul.none {
+	     list-style-type: none;
+	     margin: 0;
+	     padding: 0;
+     }
+
+     .cryptedmail:after {
+ 	content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+     }
+    /* Two-column layout */
+    .left-column {
+      color: goldenrod;
+      width: 20%;
+      height: 95%;
+      float: left;
+      padding-left: 10px;
+      padding-bottom: 15px;
+      padding-right: 10px; 
+      /* border-radius: 10px;box-shadow: 0 10px 20px 0 rgba(0,0,0.2),0 5px 20px 0 darkgreen;
+	border: 4px solid lime;*/
+	/* Created with https://www.css-gradient.com */
+	/*background: #030B07;
+	background: -webkit-linear-gradient(top left, #030B07, #034233);
+	background: -moz-linear-gradient(top left, #030B07, #034233);
+	background: linear-gradient(to bottom right, #030B07, #034233); */
+}
+     .left-column h2:last-of-type, .left-column h3:last-child {
+       color: limegreen;
+       font-family: 'Anonymous Pro';
+     }
+     .right-column {
+      font-family: 'Anonymous Pro';
+	    border-radius: 10px;box-shadow: 0 10px 20px 0 rgba(0,0,0.2),0 5px 20px 0 darkgreen;
+	    border: 4px solid lime;
+	    /* Created with https://www.css-gradient.com */
+	    background: #030B07;
+	    background: -webkit-linear-gradient(top left, #030B07, #034233);
+	    background: -moz-linear-gradient(top left, #030B07, #034233);
+	    background: linear-gradient(to bottom right, #030B07, #034233);
+      padding: 10px;
+      width: 70%;
+      float: right;
+      }
+    </style>
+  </head>
+  <body>
+  <textarea id="source">
+layout: true
+class: center, middle, front
+---
+<hr class="rounded-orange">
+# Anaconda  
+## A Python-platform for datascience
+<hr class="rounded-orange">
+
+---
+layout: false
+.left-column[
+## Python 
+]
+.right-column[
+# What is Python <i class='fas fa-microchip'></i>
+<hr class="slim-orange">
+Named after Monty Python!
+<img src="images/what_is_python.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;"> 
+[Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding "Vibe coding") wtf..
+]
+---
+.left-column[
+## Python 
+]
+.right-column[
+# Python - OpenSource and community-driven <i class='fas fa-users'></i>
+<hr class="slim-orange">
+- You can review the [code](https://www.python.org/downloads/source/) [(PSFL)](https://en.wikipedia.org/wiki/Python_Software_Foundation_License)
+- You can contribute to the [code](https://github.com/python/cpython/issues)
+- There are plenty online [ressources](https://www.python.org/doc/)
+- Used extensively for data science, machine learning (you know AI?!), web development, devops, automation and cybersecurity.  
+
+]
+---
+.left-column[
+## Python 
+]
+.right-column[
+# Python - Friendly <i class='fas fa-user-check'></i>
+<hr class="slim-orange">
+- Clean and easy syntax
+- Dynamicly typed
+<img src="images/python-helloworld.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;"> 
+]
+---
+.left-column[
+## Python 
+]
+.right-column[
+# Python - Interpreted <i class='fas fa-code-branch'></i>
+<hr class="slim-orange">
+- The interpreter runs your sourcecode (line-by-line)
+- The interpreter can be used from many tools, editors and [applications](https://support.microsoft.com/en-us/office/get-started-with-python-in-excel-a33fbcbe-065b-41d3-82cf-23d05397f53d).
+<img src="images/python-terminal-version.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;"> 
+]
+---
+.left-column[
+## Python 
+]
+.right-column[
+# Python - Crossplatform <i class='fas fa-laptop-house'></i>
+<hr class="slim-orange">
+- Write once ... run anywhere 
+<img src="images/python-platform.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+.left-column[
+## Python 
+]
+.right-column[
+# Python - Library <i class='fas fa-cogs'></i>
+<hr class="slim-orange">
+- Large built-in library
+- Extensive ecosystem for additional interfaces
+<img src="images/pypi.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+.left-column[
+## Python
+## Anaconda
+]
+.right-column[
+# <i>Anaconda</i> <i class='fas fa-truck-loading'></i>
+<hr class="slim-orange">
+- A distribution of tools for data science
+- Includes handling of python(s) and environments
+- Datascience libraries
+- Spyder
+- Jupyter Notebook
+- ... And much more
+<img src="images/anaconda-base.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+.left-column[
+## Python
+## Anaconda
+]
+.right-column[
+# <i>Anaconda Navigator</i> <i class='fas fa-truck-loading'></i>
+<hr class="slim-orange">
+<img src="images/anaconda-navigator.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+.left-column[
+## Python
+## Anaconda
+## Tools
+]
+.right-column[
+# <i>Spyder</i> <i class='far fa-edit'></i>
+<hr class="slim-orange">
+- <i>conda install spyder-kernels=3.1</i> for environment-support 
+- Select the python-interpreter from AppData\Local\anaconda\envs
+<img src="images/spyder-interface.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+.left-column[
+## Python
+## Anaconda
+## Tools
+]
+.right-column[
+# <i>Jupyter Notebook</i> <i class='far fa-edit'></i>
+<hr class="slim-orange">
+- Web-based application 
+- Create and share documents containing live code, equations, visualizations, and narrative text. 
+- Used for data analysis, machine learning, and educational purposes.
+<img src="images/jupyter-notebook.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+
+class: middle, front
+<hr class="rounded-orange">
+# <i class='far fa-lightbulb'></i> Question
+# <i class='fas fa-microphone-alt'></i> Comments
+<hr class="rounded-orange">
+
+---
+class: center, middle, front
+<hr class="rounded-orange">
+# Security and Governance 
+## How we handle the snakes at NFA
+<hr class="rounded-orange">
+
+---
+layout: false
+.left-column[
+## Python
+## Anaconda
+## Tools
+## Security
+]
+.right-column[
+# Security - [Governance](https://intra.bm.dk/documents/9862) <i class='fas fa-file-contract'></i>
+<hr class="slim-orange">
+- [Guidelines for use of Python/Anaconda](https://intra.bm.dk/documents/8223)
+- Talk to the Python-governance group ...
+- Get in the Teams-group (contact it-sikkerhed@nfa.dk)
+- Use Anaconda
+- Update your distribution when there are updates
+- Ask if you use packages (mind the whitelist)
+- Mind the policies and guidelines for processing data
+]
+---
+.left-column[
+## Python
+## Anaconda
+## Tools
+## Security
+]
+.right-column[
+# Update!1 <i class='fa fa-check-square'></i>
+<hr class="slim-orange">
+<img src="images/update-your-software.png" style="float:right; width: 300px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+.left-column[
+## Python
+## Anaconda
+## Tools
+## Security
+]
+.right-column[
+# Update Anaconda with <i>conda</i> <i class='fa fa-check-square'></i>
+<hr class="slim-orange">
+<img src="images/conda-update-conda.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+.left-column[
+## Python
+## Anaconda
+## Tools
+## Security
+]
+.right-column[
+# Environments - divide and conqueror <i class='fas fa-cube'></i>
+<hr class="slim-orange">
+<img src="images/conda-environments.png" style="float:right; width: 500px;border-radius: 10px;box-shadow: 0 5px 20px 0 rgb(0, 0, 0.2),0 5px 20px 0 rgba(143, 127, 136, 0.719);margin-top: 5px; margin-bottom: 5px;">
+]
+---
+
+.left-column[
+## Python
+## Anaconda
+## Tools
+## Security
+]
+.right-column[
+# Environments - example <i class='fas fa-cube'></i>
+<hr class="slim-orange">
+Opret et Anaconda environment
+
+<i>conda create -n llm-workspace python=3.12</i>
+
+Aktiver det nye Anaconda environment
+
+<i>conda activate llm-workspace</i>
+
+Deaktivere Anaconda environment
+
+<i>conda deactivate</i>
+
+### Andre kommandoer til at arbejde med Anaconda environments
+Se hvilke environments du har installeret.
+
+<i>conda env list</i>
+
+Slet et environment
+
+<i>conda remove llm-workspace</i>
+]
+---
+
+class: middle, front
+<hr class="rounded-orange">
+# <i class='far fa-lightbulb'></i> Question
+# <i class='fas fa-microphone-alt'></i> Comments
+<hr class="rounded-orange">
+
+
+</textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+var slideshow = remark.create();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script type="text/javascript">
+  var slideshow = remark.create({countIncrementalSlides: false});
+
+  // Setup MathJax
+  MathJax.Hub.Config({
+      tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  });
+  MathJax.Hub.Queue(function() {
+      $(MathJax.Hub.getAllJax()).map(function(index, elem) {
+          return(elem.SourceElement());
+      }).parent().addClass('has-jax');
+  });
+
+  MathJax.Hub.Configured();
+</script>
+
+  </body>
+</html>
